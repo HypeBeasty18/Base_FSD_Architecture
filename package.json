@@ -1,0 +1,74 @@
+{
+	"name": "administration",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "cross-env MODE=development webpack serve",
+		"build": "cross-env MODE=production webpack",
+		"lint": "eslint --config .eslintrc.cjs src/",
+		"prepare": "husky install"
+	},
+	"lint-staged": {
+		"**/*.(js|ts|tsx)": [
+			"prettier --write",
+			"eslint --fix"
+		],
+		"**/*.(css|md)": [
+			"prettier --write"
+		]
+	},
+	"keywords": [],
+	"author": "Sarex",
+	"license": "ISC",
+	"devDependencies": {
+		"@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
+		"@svgr/webpack": "^8.1.0",
+		"@trivago/prettier-plugin-sort-imports": "^4.3.0",
+		"@types/node": "^22.5.5",
+		"@types/react": "^18.3.5",
+		"@types/react-dom": "^18.3.0",
+		"@types/webpack": "^5.28.5",
+		"@types/webpack-dev-server": "^4.7.2",
+		"@typescript-eslint/eslint-plugin": "^6.0.0",
+		"@typescript-eslint/parser": "^6.0.0",
+		"cross-env": "^7.0.3",
+		"css-loader": "^7.1.2",
+		"dotenv-webpack": "^8.1.0",
+		"esbuild-loader": "^4.2.2",
+		"eslint": "^8.45.0",
+		"eslint-config-google": "^0.14.0",
+		"eslint-import-resolver-typescript": "^3.6.1",
+		"eslint-plugin-boundaries": "^3.4.1",
+		"eslint-plugin-react": "^7.36.1",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-react-refresh": "^0.4.3",
+		"file-loader": "^6.2.0",
+		"fork-ts-checker-webpack-plugin": "^9.0.2",
+		"html-webpack-plugin": "^5.6.0",
+		"husky": "^9.1.6",
+		"lint-staged": "^15.2.10",
+		"mini-css-extract-plugin": "^2.9.1",
+		"path": "^0.12.7",
+		"prettier": "^3.3.3",
+		"react-refresh-typescript": "^2.0.9",
+		"storybook": "^8.3.0",
+		"terser-webpack-plugin": "^5.3.10",
+		"ts-loader": "^9.5.1",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.6.2",
+		"webpack": "^5.94.0",
+		"webpack-cli": "^5.1.4",
+		"webpack-dev-server": "^5.1.0"
+	},
+	"dependencies": {
+		"@tanstack/react-query": "^5.56.2",
+		"mobx": "^6.13.2",
+		"mobx-react-lite": "^4.0.7",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"react-hook-form": "^7.53.0",
+		"react-router-dom": "^6.26.2",
+		"zod": "^3.23.8"
+	}
+}
