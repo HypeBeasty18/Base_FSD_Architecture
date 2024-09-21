@@ -1,4 +1,5 @@
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin"
+import { EsbuildPlugin } from "esbuild-loader"
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin"
 import HtmlWebpackPlugin from "html-webpack-plugin"
 import MiniCssExtractPlugin from "mini-css-extract-plugin"
@@ -19,8 +20,10 @@ export function buildPlugins({
 			template: paths.html,
 			favicon: path.resolve(paths.public, "favicon.ico")
 		}),
-		new DefinePlugin({
-			__ENV__: JSON.stringify(mode)
+		new EsbuildPlugin({
+			define: {
+				__ENV__: JSON.stringify(mode)
+			}
 		})
 	]
 

@@ -25,7 +25,7 @@ export default () => {
 
 	config.plugins?.push(
 		new webpack.container.ModuleFederationPlugin({
-			name: "administration",
+			name: "",
 			filename: "remoteEntry.js",
 			exposes: {} //указать экспортируемые компоненты
 			// shared: {

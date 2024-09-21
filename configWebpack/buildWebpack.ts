@@ -1,3 +1,4 @@
+import { EsbuildPlugin } from "esbuild-loader"
 import TerserPlugin from "terser-webpack-plugin"
 import webpack from "webpack"
 
@@ -24,17 +25,9 @@ export function buildWebpack(options: BuildOptions): webpack.Configuration {
 			minimize: !isDev,
 			minimizer: !isDev
 				? [
-						new TerserPlugin({
-							terserOptions: {
-								format: {
-									comments: false // удалить все комментарии
-								},
-								compress: {
-									drop_debugger: true, // удалить все `debugger`
-									drop_console: true // удалить все `console.log`
-								}
-							},
-							extractComments: false // отключить извлечение комментариев в отдельные файлы
+						new EsbuildPlugin({
+							target: "es2015",
+							css: true
 						})
 					]
 				: [],
